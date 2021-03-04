@@ -1,0 +1,72 @@
+﻿@model CarrinhoCompraViewModel
+
+<div class="row">
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Quantidade</th>
+                <th>Lanche</th>
+                <th class="text-right">Preço</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CarrinhoCompra.CarrinhoComprasItens)
+            {
+                <tr>
+                    <td class="text-center">
+                        @if (@item.Quantidade > 1)
+                        {
+                            <a asp-controller="CarrinhoCompras" asp-action="DiminuirQuantidadeItem" asp-route-id="@item.Produto.Id"> <i class="fas fa-minus aumentar-diminuir" style="color: gray;"></i> </a>
+                        }
+
+                        <span class="pl-2 pr-2"> @item.Quantidade </span>
+                        <a asp-controller="CarrinhoCompras" asp-action="AumentarQuantidadeItem" asp-route-id="@item.Produto.Id"> <i class="fas fa-plus aumentar-diminuir" style="color: gray;"></i> </a>
+                    </td>
+                    <td class="text-left">@item.Produto.Nome</td>
+                    <td class="text-right">@item.Produto.Preco.ToString("c")</td>
+                    <td class="text-right">
+                        @((item.Quantidade * item.Produto.Preco).ToString("c"))
+                    </td>
+                    <td class="text-center text-black">
+                        <a asp-controller="CarrinhoCompras" asp-action="RemoverItemDoCarrinhoCompra" asp-route-id="@item.Produto.Id"><i class="fas fa-trash-alt" style="color: gray;"></i></a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.CarrinhoCompraTotal.ToString("c")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <span class="text-danger"> @Html.ValidationSummary() </span>
+
+    @if (@Model.CarrinhoCompraTotal > 0)
+    {
+        <div class="text-right">
+            <div class="btn-group ">
+                <a class="btn busca-btn" asp-controller="Pedidos" asp-action="Checkout"> Finalizar Compra </a>
+
+            </div>
+        </div>
+    }
+
+</div>
+
+@if (@Model.CarrinhoCompraTotal == 0)
+{
+    <div class="text-center">
+        <div class="alert alert-warning" role="alert">
+            Carrinho está vazio!
+        </div>
+    </div>
+}
+

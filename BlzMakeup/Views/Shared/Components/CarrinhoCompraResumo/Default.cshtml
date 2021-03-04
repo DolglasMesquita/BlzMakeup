@@ -1,0 +1,13 @@
+﻿@model CarrinhoCompraViewModel
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a class="p-2 nav-link" asp-controller="CarrinhoCompras" asp-action="Index" id="icone-carrinho">
+        <p class="h4  nome-login">
+            <i class="fas fa-shopping-cart carrinho"></i>
+            <span class="badge badge-Light" style="margin-left: -10px;"> @Model.CarrinhoCompra.CarrinhoComprasItens.Count </span>
+            <span class="sr-only"> Produtos no carrinho </span>
+        </p>
+    </a>
+
+}

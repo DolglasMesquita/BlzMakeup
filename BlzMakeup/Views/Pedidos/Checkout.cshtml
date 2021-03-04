@@ -1,0 +1,80 @@
+﻿@model Pedido
+
+<h3 class=" nome-login pb-4 pt-3"> Estamos quase finalizando sua compra </h3>
+<form asp-action="Checkout" method="post" class="form-horizontal" role="form">
+    <div class="form-group">
+        <label asp-for="Nome" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Nome" class="form-control" />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Sobrenome" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Sobrenome" class="form-control" />
+            <span asp-validation-for="Sobrenome" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Logradouro" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Logradouro" class="form-control" />
+            <span asp-validation-for="Logradouro" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumeroCasa" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="NumeroCasa" class="form-control" />
+            <span asp-validation-for="NumeroCasa" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Complemento" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Complemento" class="form-control" />
+            <span asp-validation-for="Complemento" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cep" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Cep" class="form-control" />
+            <span asp-validation-for="Cep" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Estado" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Estado" class="form-control" />
+            <span asp-validation-for="Estado" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cidade" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Cidade" class="form-control" />
+            <span asp-validation-for="Cidade" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Telefone" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Telefone" class="form-control" />
+            <span asp-validation-for="Telefone" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="col-md-4 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="btn-group col-md-5">
+            <input class="btn finalizar-pedido" type="submit" value="Finalizar Pedido" />
+        </div>
+    </div>
+</form>

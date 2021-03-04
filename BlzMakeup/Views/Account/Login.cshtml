@@ -1,0 +1,38 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["title"] = "Login";
+
+}
+
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" asp-controller="Account" asp-action="Login" method="post" role="form">
+            <h3 class="texto-cinza pb-5"> ENTRAR </h3>
+            <div class="form-group">
+                <label asp-for="UserName" class="col-md-2 control-label"></label>
+                <div class="col-md-12">
+                    <input asp-for="UserName" class="form-control" />
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="col-md-2 control-label"></label>
+                <div class="col-md-12">
+                    <input asp-for="Password" class="form-control" />
+
+                </div>
+            </div>
+            <span class="text-danger"> @Html.ValidationSummary() </span>
+            <div class="form-group formPullRightButton">
+                <div>
+                    <button type="submit" class="btn"> Entrar </button>
+                </div>
+            </div>
+        </form>
+        <p class="text-center texto-cinza"> ou clique 
+            <a asp-action="Register"> aqui </a> 
+        para se cadastrar </p>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BlzMakeup</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/custom.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/images/logo.png" width="100" /> </a>
+                <div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-principal" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div id="menu-principal" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        <li class="nav-item mt-3">
+                            <form class="form-inline navbar-right" asp-controller="Produtos" asp-action="Search" method="get">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control busca" placeholder="Pesquisar" aria-describedby="button-addon2" name="searchString" value="@ViewData["searchString"]">
+                                    <div class="input-group-append">
+                                        <button class="btn busca-btn" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item pr-25">
+                                <a class="nav-link" asp-area="Admin" asp-controller="Admin" asp-action="Index"> <i class="btn fas fa-user-cog"></i> </a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            @await Component.InvokeAsync("CarrinhoCompraResumo")
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"> @User.Identity.Name </a>
+                        </li>
+                        <li>
+                            @await Html.PartialAsync("_LoginPartial")
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav id="menu-categorias" class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#categorias" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+                <span class=" expandir-menu"> <i class="text-white fas fa-ellipsis-v"></i> </span>
+            </button>
+            <div id="categorias" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    @await Component.InvokeAsync("CategoriaMenu")
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @{
+        string acao = (string)ViewData["pagina"];
+
+        if ( acao == "home")
+        {
+            <partial name="_Carousel" />
+        }
+    }
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - BlzMakeup
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

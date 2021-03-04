@@ -1,0 +1,21 @@
+﻿@model ProdutosListViewModel
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1 class="nome-login pb-5 pt-3"> @Model.CategoriaAtual </h1>
+
+<div class="row">
+    @foreach (var produto in Model.Produtos)
+    {
+        <partial name="_ProdutosResumo" for="@produto" />
+    }
+</div>
+
+@if (Model.Produtos.Count() == 0)
+{
+    <div class="alert alert-warning text-center" role="alert">
+        Nenhum item corresponde a pesquisa
+    </div>
+}

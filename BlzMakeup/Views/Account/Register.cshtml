@@ -1,0 +1,41 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["title"] = "Cadastrar";
+
+}
+
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" asp-controller="Account" asp-action="Register" method="post" role="form">
+            <h3 class="texto-cinza pb-5"> CADASTRE-SE </h3>
+            <div class="form-group">
+                <label asp-for="UserName" class="col-md-2 control-label"></label>
+                <div class="col-md-12">
+                    <input asp-for="UserName" class="form-control" />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="col-md-2 control-label"></label>
+                <div class="col-md-12">
+                    <input asp-for="Email" class="form-control" />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="col-md-2 control-label"></label>
+                <div class="col-md-12">
+                    <input asp-for="Password" class="form-control" />
+
+                </div>
+            </div>
+            <span class="text-danger"> @Html.ValidationSummary() </span>
+            <div class="form-group pull-right formPullRightButton">
+                <div>
+                    <button type="submit" class="btn"> Cadastrar </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

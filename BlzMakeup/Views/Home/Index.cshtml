@@ -1,0 +1,41 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["pagina"] = "home";
+
+}
+
+
+
+
+
+<h2 class="mt-5 pb-4 nome-login"> Destaques do mês </h2>
+
+<div class="row pb-5">
+    @foreach (var produto in Model.Destaques)
+    {
+        <partial name="_ProdutosResumo" for="@produto" />
+    }
+</div>
+
+<h2 class="mt-5 pb-4 nome-login"> Todos os produtos </h2>
+
+<div class="row">
+    @foreach (var produto in Model.Todos)
+    {
+        <partial name="_ProdutosResumo" for="@produto" />
+    }
+</div>
+
+@*
+
+    <h2 class="mt-5 mb-3"> Todos os produtos </h2>
+
+    <div class="row">
+        @foreach (var produto in Model.Todos)
+        {
+            <partial name="_ProdutosResumo" for="@produto" />
+        }
+    </div>
+
+*@

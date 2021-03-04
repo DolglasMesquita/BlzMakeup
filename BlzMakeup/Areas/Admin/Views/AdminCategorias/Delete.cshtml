@@ -1,0 +1,25 @@
+﻿@model BlzMakeup.Models.Categoria
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Deseja deletar esta categoria ?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.CategoriaNome)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.CategoriaNome)
+        </dd>
+    </dl>
+    <hr />
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger rounded" />
+        <a asp-action="Index" class="btn btn-sm">Retornar</a>
+
+    </form>
+</div>

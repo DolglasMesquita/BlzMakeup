@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BlzMakeup.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="m-3"> Categorias </h1>
+
+
+<table class="table table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoriaNome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id"> @Html.DisplayFor(modelItem => item.CategoriaNome) </a>
+
+                </td>
+                <td class="text-center">
+                    <a class="pl-3 pr-3" asp-action="Edit" asp-route-id="@item.Id" title="Editar"> <i class="fas fa-edit text-info"></i> </a>
+                    <a class="pl-3 pr-3" asp-action="Delete" asp-route-id="@item.Id" title="Remover"> <i class="fas fa-trash text-danger"></i> </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="col-3">
+    <a class="btn btn-dark rounded" asp-action="Create"> Nova categoria </a>
+</div>

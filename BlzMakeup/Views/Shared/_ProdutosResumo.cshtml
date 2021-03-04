@@ -1,0 +1,20 @@
+﻿@model Produto
+
+<div class="col-lg-4 col-md-6 mb-2">
+
+    <div class='container-fluid'>
+        <div class="card mx-auto">
+            <img class="card-img-top img-fluid p-5" src="@Model.ImagemUrl" >
+            <div class="card-body text-center mx-auto">
+                <div class='cvp'>
+                    <a asp-controller="Produtos" asp-action="Details" asp-route-Id="@Model.Id" class="btn">
+                        <h5 class="card-title font-weight-bold">  @Model.Nome </h5>
+                    </a>
+                    <p class="card-text lead"> @Model.Preco.ToString("c") </p>
+                    <a asp-controller="Produtos" asp-action="Details" asp-route-Id="@Model.Id" class="btn details px-auto"> Ver detalhes </a> <br />
+                    <a class="btn cart px-auto" id="cartCutton" asp-controller="CarrinhoCompras" asp-action="AdicionarItemNoCarrinhoCompra" asp-route-id="@Model.Id">  ADICIONAR AO CARRINHO </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

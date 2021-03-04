@@ -1,0 +1,34 @@
+﻿@model Pedido
+
+<div class="container marginTop1">
+
+    <div class="alert alert-success text-center mt-5" role="alert">
+        @ViewBag.CheckoutCompletoMensagem
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <p>Cliente : <strong>@Model.Nome</strong>
+            <p>Data do Pedido :  <strong>@Model.PedidoEnviado</strong>
+            <p>Número do Pedido   : <strong>@Model.Id</strong></p>
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Quantidade</th>
+                    <th>Lanche</th>
+                    <th>Preço</th>
+                </tr>
+                @foreach (var item in Model.PedidosItens)
+                {
+                    <tr>
+                        <td><img src="@item.Produto.ImagemUrl" width="40" height="40" /></td>
+                        <td>@item.Quantidade</td>
+                        <td>@item.Produto.Nome</td>
+                        <td>@item.Produto.Preco</td>
+                    </tr>
+                }
+            </table>
+            <h4>Valor Total do Pedido: <strong>@(((decimal)ViewBag.TotalPedido).ToString("C2"))</strong></h4>
+        </div>
+    </div>
+</div>

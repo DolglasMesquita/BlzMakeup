@@ -1,0 +1,153 @@
+﻿.link-categorias {
+    border-right: 1px dotted #f1f1f1;
+    color: #FFF;
+}
+
+.link-categorias:hover {
+    color: #DFDFDD;
+}
+
+#menu-categorias {
+    background-image: linear-gradient(to right, #E78EB0, #F1BDD1);
+}
+
+#icone-carrinho {
+    color: #000;
+}
+
+#icone-carrinho:hover {
+    text-decoration: none;
+}
+
+.login-page {
+    width: 360px;
+    padding: 3% 0 0;
+    margin: auto;
+}
+
+.form {
+    background: #FFFFFF;
+    max-width: 360px;
+    padding: 45px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 1px solid gray;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #E78FB1;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFF;
+}
+
+.finalizar-pedido {
+    text-transform: uppercase;
+    outline: 0;
+    background: #E78FB1;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFF;
+}
+
+    .finalizar-pedido:hover {
+        text-transform: uppercase;
+        outline: 0;
+        background: #F1BCD1;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFF;
+    }
+
+.form button:hover, .form button:active, .form button:focus {
+    background: #F1BDD1;
+    color: #f2f2f2;
+}
+
+.busca {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 1px solid gray;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.busca-btn {
+    text-transform: uppercase;
+    outline: 0;
+    background: #E78FB1;
+    border: 1px solid gray;
+    color: #FFF;
+}
+
+.busca-btn:hover {
+    background-color: #F1BCD1;
+    color: #FFF;
+}
+
+.texto-cinza {
+    color: gray;
+}
+
+
+.details {
+    border: 1.5px solid grey;
+    color: #212121;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 10px #212121;
+}
+
+.details:hover {
+    background-color: #F3F3F3;
+}
+
+.cart {
+    background-color: #E78FB1;
+    color: white;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 900;
+    width: 100%;
+    height: 39px;
+    padding-top: 9px;
+    box-shadow: 0px 5px 10px #212121;
+}
+
+.cart:hover {
+    background-color: #F1BCD1;
+    color: #FFF;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.img-thumbnail {
+    border: none
+}
+
+.card {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    padding-bottom: 10px
+}
+
+/******************************************************/
+
+
